@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>С Днём Рождения!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="birthday-card">
+    <div class="big-question">
+        🎂 Сколько тебе сегодня исполнилось? 🎉
+    </div>
+    <div class="sub">
+        ✨ Выбери самый честный вариант ✨
+    </div>
+
+    <div class="buttons-group">
+        <button class="btn btn-primary" id="btnTwenty">20 лет</button>
+        <button class="btn btn-secondary" id="btnEighteen">Вечно 18 лет</button>
+    </div>
+    <footer>нажми с душой 💖</footer>
+</div>
+
+<!-- Модальное окно -->
+<div id="modalOverlay" class="modal-overlay">
+    <div class="modal-container" id="modalContent">
+        <div id="modalDynamicBody"></div>
+        <button class="close-modal-btn" id="closeModalBtn">Закрыть</button>
+    </div>
+</div>
+
+<!-- Подключаем JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

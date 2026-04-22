@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #fbc2eb 0%, #a6c1ee 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+.birthday-card {
+    max-width: 500px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(2px);
+    border-radius: 56px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5);
+    padding: 2rem 1.5rem 2.5rem;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.big-question {
+    font-size: clamp(2rem, 8vw, 3rem);
+    font-weight: 800;
+    color: #2d3e50;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 10px rgba(255,255,200,0.6);
+    letter-spacing: -0.01em;
+    word-break: break-word;
+}
+
+.sub {
+    font-size: 1rem;
+    color: #5a6e7c;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    background: #ffe9f0;
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    backdrop-filter: blur(2px);
+}
+
+.buttons-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 1.8rem 0 0.5rem;
+}
+
+.btn {
+    flex: 1;
+    min-width: 150px;
+    border: none;
+    background: #ffffff;
+    padding: 1rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+    letter-spacing: 1px;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn-primary {
+    background: #f9d56e;
+    color: #7a4b1a;
+    border: 1px solid #ffcd94;
+}
+
+.btn-primary:hover {
+    background: #ffda7c;
+}
+
+.btn-secondary {
+    background: #ff8a9f;
+    color: #4b1e2c;
+    border: 1px solid #ffb6c7;
+}
+
+.btn-secondary:hover {
+    background: #ff9fb2;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s ease;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-container {
+    background: #fffef7;
+    max-width: 90%;
+    width: 480px;
+    border-radius: 48px;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    text-align: center;
+    padding: 1.8rem 1.5rem 2rem;
+}
+
+.modal-overlay.active .modal-container {
+    transform: scale(1);
+}
+
+.your-congrats-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto 1rem;
+    border-radius: 20px;
+    display: block;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    object-fit: cover;
+}
+
+.modal-title {
+    font-size: 1.9rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #c44569;
+}
+
+.modal-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: #2c3a41;
+    margin: 1rem 0;
+    font-weight: 500;
+}
+
+.close-modal-btn {
+    background: #ffb347;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 60px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: inherit;
+    color: #2d2b26;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.close-modal-btn:active {
+    transform: scale(0.96);
+}
+
+/* Анимация для конфетти */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .birthday-card {
+        padding: 1.5rem 1.2rem 2rem;
+    }
+    .btn {
+        font-size: 1.3rem;
+        padding: 0.9rem 0.8rem;
+        min-width: 130px;
+    }
+    .modal-container {
+        padding: 1.5rem 1rem;
+    }
+    .modal-title {
+        font-size: 1.6rem;
+    }
+    .modal-text {
+        font-size: 1rem;
+    }
+    .your-congrats-image {
+        max-width: 200px;
+    }
+}
+
+footer {
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    opacity: 0.7;
+    color: #2c3a41;
+}
