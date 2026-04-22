@@ -95,8 +95,8 @@ function openModal(type) {
                 <div style="font-size: 4rem; margin-bottom: 0.5rem;">🤔</div>
                 <div class="modal-title">Не-а, не угадала!</div>
                 <div class="modal-text">
-                    ⚡️ <strong>Неправильно...</strong> подумай ещё!<br>
-                    Ведь твоя душа всегда юна, а возраст — это всего лишь цифры ✨<br>
+                    ⚡️ <strong>ахаххаахах неправильно...</strong> подумай ещё!<br>
+                    Ведь твоя душа всегда юна, а возраст — это всего лишь цифры в папорте, чтобы пиво продавали✨<br>
                     Попробуй другой вариант 😉
                 </div>
                 <div style="font-size: 2rem; margin-top: 0.5rem;">🎈🎀</div>
@@ -124,12 +124,12 @@ function openModal(type) {
         modalDynamicBody.innerHTML = `
             <div style="text-align: center;">
                 ${imageHtml}
-                <div class="modal-title">🎂 С Днём Рождения, красавица! 🎂</div>
+                <div class="modal-title">🎂 С Днём Рождения, любимка! 🎂</div>
                 <div class="modal-text">
                     🌸 <strong>Вечно 18!</strong> Именно так! 🌸<br><br>
                     Пусть каждый день дарит улыбки, волшебство и радость.<br>
                     Ты — самая чудесная подруга, оставайся такой же искренней, лёгкой и неповторимой!<br><br>
-                    🥂 Здоровья, счастья, любви и исполнения всех мечтаний! ✨
+                    🥂 Здоровья, счастья, любви(скорее замуж) и исполнения всех мечтаний!✨
                 </div>
                 <div style="font-size: 2rem; margin-top: 0.2rem;">🎁💐🍰</div>
             </div>
